@@ -42,12 +42,15 @@ function sendMail() {
             continue;
         }
         for (var a in attachFiles[username]){
+
+            var fullName = attachFiles[username][a];
             var attach = {
-                filename: attachFiles[username][a],
-                // path: dirAttach,
-                // cid: 'nyan@example.com'
+                filename: fullName.substr(fullName.lastIndexOf('/')+1),
+                path: fullName,
+                cid: 'cid'+new Date().getTime()+Math.random()
             };
-            console.log(attach)
+            console.log(attach);
+
             attachments.push(attach);
         }
 
