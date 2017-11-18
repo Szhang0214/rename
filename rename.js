@@ -4,7 +4,7 @@ var iconv=require('iconv-lite');
 
 var namesFile = "./客户名.csv";//客户名称文件
 var picsDir = "./pics";//图片所在目录
-var suffix = ".png";//图片后缀名
+var suffix = ".pdf";//图片后缀名
 
 
 var bytes = fs.readFileSync(namesFile);

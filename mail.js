@@ -49,7 +49,7 @@ function sendMail() {
                 path: fullName,
                 cid: 'cid'+new Date().getTime()+Math.random()
             };
-            console.log(attach);
+            // console.log(attach);
 
             attachments.push(attach);
         }
@@ -81,7 +81,7 @@ function sendMail() {
 function getBody() {
     var body = fs.readFileSync('templates/mail.html','utf8');
     var d = new Date();
-    var date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+    var date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
     body = body.replace(/\[DATE\]/, date);
     return body;
 }
