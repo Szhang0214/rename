@@ -4,6 +4,8 @@ var fs=require('fs');
 var iconv=require('iconv-lite');
 var config=require('./config');
 
+var title = '的账单';
+
 var transporter = mailer.createTransport({
     host: config.server,
     port: config.port,
@@ -15,7 +17,6 @@ var transporter = mailer.createTransport({
     logger: false,
     debug: false
 });
-
 
 var receivers=[];
 var names=[];
@@ -58,24 +59,24 @@ function sendMail() {
         var mailOptions = {
             from: config.user,
             to: email,
-            subject: username,
+            subject: username+ title,
             // text: '',
             html: getBody(),
             attachments: attachments
         };
 
         transporter.sendMail(mailOptions, function (err, info) {
+            var receiver = info.accepted.join(',');
             if (err) {
-                console.error("发送失败，收件人：" + mailOptions.to)
+                // console.error("发送失败，收件人：" + mailOptions.to)
+                console.error("发送失败:"+ receiver);
                 console.error(err);
                 return;
             }
-            console.log('发送成功');
+            console.log('发送成功，收件人:'+receiver);
         });
     }
 }
-
-
 
 
 function getBody() {
