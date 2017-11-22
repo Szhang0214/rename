@@ -4,7 +4,7 @@ var fs=require('fs');
 var iconv=require('iconv-lite');
 var config=require('./config');
 
-var title = '的账单';
+var title = '的债权';
 
 var transporter = mailer.createTransport({
     host: config.server,
@@ -80,7 +80,7 @@ function sendMail() {
 
 
 function getBody() {
-    var body = fs.readFileSync('templates/账单.html','utf8');
+    var body = fs.readFileSync('templates/债权.html','utf8');
     var d = new Date();
     var date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
     body = body.replace(/\[DATE\]/, date);
