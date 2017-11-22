@@ -80,7 +80,7 @@ function sendMail() {
 
 
 function getBody() {
-    var body = fs.readFileSync('templates/mail.html','utf8');
+    var body = fs.readFileSync('templates/账单.html','utf8');
     var d = new Date();
     var date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
     body = body.replace(/\[DATE\]/, date);

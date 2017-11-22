@@ -14,7 +14,7 @@ var names=[];
 lines.forEach(function (line) {
     var name=line.trim();
     if (name) {
-        names.push(name)
+        names.push(name+'的账单')
     }
 });
 
