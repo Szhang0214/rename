@@ -116,6 +116,7 @@ function getAttachFiles(names) {
         if (index==-1){
             index=fileName.lastIndexOf('.');
         }
+        index -=3;//'的债权'
         var username=fileName.substr(0,index);
         if(-1==names.indexOf(username)){
             console.warn(dirAttach+"/"+fileName+" 不属于任何收件人");
