@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账单pdf制作模板</title>
+    <style>
+        html {
+            font-size: 10px;
+            width: 210mm;;
+        }
+
+        body {
+            padding: 40px 100px;
+        }
+
+        h1, h2 {
+            font-weight: normal;
+        }
+
+        span.underline {
+            /*display: block;*/
+            text-decoration: underline;
+            padding: 0 6px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            font-weight: normal;
+        }
+
+        table, table tr th, table tr td {
+            border: 1px solid black;
+        }
+
+        table {
+            min-height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .clearfix:after {
+            content: " ";
+            display: block;
+            clear: both;
+            height: 0;
+        }
+
+        .clearfix {
+            zoom: 1;
+            padding: -2px;;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        p.indent {
+            text-indent: 2em;
+        }
+
+        .right-part {
+            padding-left: 60%;
+        }
+        .left-part{
+            width:50%;;
+        }
+        .left-part + div.fl{
+            padding-left:10%;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- todo
+ [USER] 刘世丹
+ [SEX] 女士
+ -->
+
+<!-- 资金借出情况 -->
+<section>
+    <h1>刘世丹 女士 亲启</h1>
+    <h2 class="center">资金出借情况报告</h2>
+
+    <p>尊敬的 <span class="underline">刘世丹</span>女士，您好：</p>
+    <p class="indent">感谢您选择中润公司的咨询服务，参考中润公司的推荐进行资金的出借增值，您目前出借的款项所产生的收益情况如下：</p>
+    <div class="clearfix">
+        <p class="fr">货币单位：人民币（元）</p>
+    </div>
+    <table cellpadding="4">
+        <tr>
+            <th colspan="2">报告周期</th>
+            <th colspan="2">2017.10.10-2017.11.10</th>
+        </tr>
+        <tr>
+            <td>报告日期</td>
+            <td>2017.11.15</td>
+            <td>报告日资产总额</td>
+            <td>51，8333.33</td>
+        </tr>
+        <tr>
+            <td>出借编号</td>
+            <td>资金出借及回收方式</td>
+            <td>初始出借日期</td>
+            <td>初始出借金额</td>
+        </tr>
+        <tr>
+            <td>0010176</td>
+            <td>年丰盈</td>
+            <td>2017.07.10</td>
+            <td>50，000.00</td>
+        </tr>
+    </table>
+
+    <div class="clearfix">
+        <p class="fl indent">您目前的每笔出借款项实际回收情况及出借收益如下：</p>
+        <p class="fr">货币单位：人民币（元）</p>
+    </div>
+    <table cellpadding="4">
+        <tr>
+            <th>报告日</th>
+            <th>报告期内借款人应还款金额</th>
+            <th>报告日内您选择受让的债权金额</th>
+            <th>报告日您选择收回的金额</th>
+            <th>报告日资产总额</th>
+            <th>报告期内实际收益</th>
+        </tr>
+        <tr>
+            <td colspan="6" class="left">出借编号：0010176</td>
+        </tr>
+        <tr>
+            <td>2017/08/15</td>
+            <td>437.00</td>
+            <td>437.00</td>
+            <td>0.00</td>
+            <td>50,458.33</td>
+            <td>437.00</td>
+        </tr>
+        <tr>
+            <td>2017/09/15</td>
+            <td>440.82</td>
+            <td>440.82</td>
+            <td>0.00</td>
+            <td>50,916.67</td>
+            <td>440.82</td>
+        </tr>
+        <tr>
+            <td>2017/10/15</td>
+            <td>444.67</td>
+            <td>444.67</td>
+            <td>0.00</td>
+            <td>50,375.00</td>
+            <td>444.67</td>
+        </tr>
+    </table>
+    <p class="indent">感谢您选购中润公司理财产品，中润公司竭诚为您提供最优质高效的服务，有任何问题联系我们为您专门制定的客服经理。</p>
+    <p class="indent">客服热线：4008-137-799</p>
+    <div class="center">
+        <p>北京中润天下企业管理中心</p>
+        <p>盖章：</p>
+        <p>日期：</p>
+    </div>
+</section>
+
+
+<!-- 既有债权列表 -->
+<section>
+    <p class="center">既有债权列表</p>
+    <p class="indent">通过中润公司信用评估与筛选，推荐您通过受让他人既有的个人间贷款合同的方式，目前已经出借资金给如下借款人，详见《既有债权列表》。</p>
+    <table cellpadding="4">
+        <tr>
+            <th colspan="5">债权基本信息</th>
+            <th colspan="5">借款人如约还款情况下债权收益信息</th>
+        </tr>
+        <tr>
+            <td>序号</td>
+            <td>借款人</td>
+            <td>借款人证件号</td>
+            <td>初始受让债权价值</td>
+            <td>2017年11月15日持有债权价值（元）</td>
+            <td>还款起始日期</td>
+            <td>本期还款金额</td>
+            <td>还款期限（月）</td>
+            <td>剩余还款月数</td>
+            <td>预计债权收益率（年）</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>北京星华智本投资有限公司</td>
+            <td>91110111582590935F</td>
+            <td>50,440.82</td>
+            <td>50,440.82</td>
+            <td>2017/09/27</td>
+            <td>440.85</td>
+            <td>12</td>
+            <td>10</td>
+            <td>11.00%</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>童志强</td>
+            <td>420104195302261612</td>
+            <td>881.67</td>
+            <td>881.67</td>
+            <td>2017/10/15</td>
+            <td>7.71</td>
+            <td>4</td>
+            <td>3</td>
+            <td>11.00%</td>
+        </tr>
+        <!-- 合计 -->
+        <tr>
+            <td colspan="3">合计</td>
+            <td></td>
+            <td>51,322.49</td>
+            <td></td>
+            <td>448.56</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+    <!-- 债权转让及受让协议 -->
+    <p class="center">债权转让及受让协议</p>
+    <p class="right-part">出借编号：<span class="underline">001076</span></p>
+    <p class="right-part">资金出借及回收方式：<span class="underline">年丰盈</span></p>
+
+    <p> 尊敬的 <span class="underline">刘世丹</span>女士，您好！ </p>
+    <p class="indent">通过中润公司信用评估与筛选，推荐您 <span class="underline">2017/11/15</span>通过受让他人既有的个人借贷合同的方式，
+        出借资金给如下借款人，详见《债权列表》。</p>
+</section>
+
+<!-- 债权列表 -->
+<section>
+    <p class="center">债权列表</p>
+    <div class="clearfix">
+        <div class="fl left-part">
+            <p>转让人（原债权人）：于佳</p>
+            <p>身份证（护照）号码：110226198502224714</p>
+        </div>
+        <div class="fl">
+            <p>受让人（新债权人）：刘世丹</p>
+            <p>身份证（护照）号码：1305661985022434343</p>
+        </div>
+    </div>
+
+    <div class="clearfix">
+        <div class="fl">债权转让明细：</div>
+        <div class="fr">货币单位：人民币（元）</div>
+    </div>
+    <!-- 转让债权明细 -->
+    <table cellpadding="4">
+        <tr>
+            <th colspan="7">转让债权基本信息</th>
+            <th colspan="4">转让债权收益信息</th>
+        </tr>
+        <tr>
+            <td rowspan="2">序号</td>
+            <td rowspan="2">债务人</td>
+            <td rowspan="2">债务人证件号</td>
+            <td rowspan="2">债权价值</td>
+            <td rowspan="2">证书编号</td>
+            <td rowspan="1" colspan="2">债务人</td>
+            <td rowspan="2">还款起始日期</td>
+            <td rowspan="2">还款期限</td>
+            <td rowspan="2">剩余还款月</td>
+            <td rowspan="2">预计年收益</td>
+        </tr>
+        <tr>
+            <td>债务人情况</td>
+            <td>借款用途</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>童志强</td>
+            <td>4201000000000612</td>
+            <td>881.67</td>
+            <td>京（2015）朝阳区不动产证明第0018431号</td>
+            <td>企业法人</td>
+            <td>资金周转</td>
+            <td>2017/10/15</td>
+            <td>4</td>
+            <td>3</td>
+            <td>11.00%</td>
+        </tr>
+
+        <!-- 合计 -->
+        <tr>
+            <td>合计</td>
+            <td></td>
+            <td></td>
+            <td>881.67</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <!-- 转让声明 -->
+    <div>
+        <p class="indent">本人自愿将上述债权转让给受让人，如果受让人对上述债权转让没有异议须于 <span class="underline">2017/11/15</span>前将上述对价共计人民币（大写）<span
+                class="underline">捌佰捌拾壹元陆角柒分整</span>（人民币小写￥<span class="underline">881.67</span>）支付到本人指定的账户。 </p>
+        <p class="indent"> 自款款项到账次日起，上述债权转让即生效，债权转让生效后，署有本人签章的本文件即代表受让人对上述债权的所有权。 </p>
+    </div>
+    <!-- 盖章 -->
+    <div class="clearfix">
+        <div class="fl">
+            本人特此盖章证明。
+        </div>
+        <div class="fl" style="margin-left: 30px;">
+            <p>转让人：于佳</p>
+            <p>签章：</p>
+            <p>日期：2017/11/15</p>
+        </div>
+        <div class="fl" style="margin-left: 120px;">
+            <p>见证人：北京中润天下企业管理中心 </p>
+            <p>签章：</p>
+            <p>日期：2017/11/15</p>
+        </div>
+    </div>
+    <!-- 提示 -->
+    <div>
+        <p>中润公司提示：</p>
+        <p class="indent">如果受让人对上述债权全部或部分不认可，请填写本回执，表明所拒绝的债权序号，在 <span class="underline">2017/11/15</span>前将回执交给中润公司并自己保留一份取得中润公司协调进行其他债权的推荐。
+        </p>
+    </div>
+    <!-- 债权转让拒绝回执  -->
+    <div>
+        <p class="center"> 债权转让拒绝回执 </p>
+        <p class="indent">本人拒绝转让人 <span class="underline">于佳</span>上述欲转让给本人的第 <span class="underline">&nbsp;&nbsp;&nbsp;&nbsp;</span>号（一次填写序号）债权，本人将不予支付该债权的对价；对于其他未拒绝的债权，将按时支付对价。请中润公司知悉并见证。
+        </p>
+        <!-- 签章 -->
+        <div class="clearfix">
+            <div class="fl">本人特此签章证明。</div>
+
+            <div class="fl" style="margin-left: 30px;">
+                <p>受让人：</p>
+                <p>签章：</p>
+                <p>日期</p>
+            </div>
+            <div class="fl" style="margin-left: 160px;">
+                <p>见证人：北京中润天下企业管理中心</p>
+                <p>签章：</p>
+                <p>日期</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
