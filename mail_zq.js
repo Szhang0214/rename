@@ -32,23 +32,29 @@ sendMail();
 
 
 function sendMail() {
-    for (i = 0; i < receivers.length; i++) {
+
+    sendOneMail(0,receivers.length);
+
+    function sendOneMail(i) {
+        if (i>=receivers.length){
+            console.log("发送完成,共发送 "+receivers.length+" 封邮件");
+            return;
+        }
         var email = receivers[i]['email'];
         var username = receivers[i]['name'];//标题=客户名
 
         var attachments = [];
 
-        if (! username in attachFiles){
-            console.error("出错："+username+" 没有附件");
-            continue;
+        if (!username in attachFiles) {
+            console.error("出错：" + username + " 没有附件");
         }
-        for (var a in attachFiles[username]){
+        for (var a in attachFiles[username]) {
 
             var fullName = attachFiles[username][a];
             var attach = {
-                filename: fullName.substr(fullName.lastIndexOf('/')+1),
+                filename: fullName.substr(fullName.lastIndexOf('/') + 1),
                 path: fullName,
-                cid: 'cid'+new Date().getTime()+Math.random()
+                cid: 'cid' + new Date().getTime() + Math.random()
             };
             // console.log(attach);
 
@@ -57,23 +63,24 @@ function sendMail() {
 
 
         var mailOptions = {
+            pool: true,
             from: config.user,
             to: email,
-            subject: username+ title,
+            subject: username + title,
             // text: '',
             html: getBody(),
             attachments: attachments
         };
 
         transporter.sendMail(mailOptions, function (err, info) {
-            var receiver = info.accepted.join(',');
             if (err) {
-                // console.error("发送失败，收件人：" + mailOptions.to)
-                console.error("发送失败:"+ receiver);
+                console.error("发送失败,收件人："+mailOptions.to);
                 console.error(err);
                 return;
             }
-            console.log('发送成功，收件人:'+receiver);
+            var receiver = info.accepted.join(',');
+            console.log('发送成功，收件人:' + receiver);
+            sendOneMail(i+1);
         });
     }
 }
@@ -136,9 +143,12 @@ function printReceivers() {
     console.log("\n收件人:");
     console.log(receivers);
 }
+
 function printAttaches() {
     console.log("\n收件人对应的附件：");
     for (f in attachFiles) {
-        console.log("\t收件人：" + f + ",附件：" + attachFiles[f]);
+        console.log("\t收件人：" + f + ",附件：" + attachFiles[f].map(function (file) {
+                return path.basename(file);
+            }));
     }
 }
