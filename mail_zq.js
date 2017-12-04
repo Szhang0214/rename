@@ -3,6 +3,7 @@ var mailer = require('nodemailer');
 var fs=require('fs');
 var iconv=require('iconv-lite');
 var config=require('./config');
+var path=require('path');
 
 var title = '的债权';
 
