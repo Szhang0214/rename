@@ -1,7 +1,8 @@
 var fs=require("fs");
+var process=require('process');
 
-files=fs.readdirSync("./附件")
-console.log(files)
+console.log(process.argv)
+
 //
 //
 //

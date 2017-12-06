@@ -1,11 +1,17 @@
 //加载file system模块
 var fs = require("fs");
 var iconv=require('iconv-lite');
+var process=require('process');
 
 var namesFile = "./客户名.csv";//客户名称文件
 var picsDir = "./pics";//图片所在目录
 var suffix = ".pdf";//图片后缀名
 
+if(process.argv.length!=3){
+    console.log('usage node '+__filename+ '账单/债权');
+    process.exit(-1);
+}
+var func=process.argv[2];//账单、债权
 
 var bytes = fs.readFileSync(namesFile);
 var data = iconv.decode(bytes, 'gbk');
@@ -14,7 +20,7 @@ var names=[];
 lines.forEach(function (line) {
     var name=line.trim();
     if (name) {
-        names.push(name+'的债权')
+        names.push(name+'的'+func)
     }
 });
 
@@ -40,7 +46,7 @@ function modify_names(names){
 //
 
 var pics = fs.readdirSync(picsDir);//图片文件名
-console.log(pics);
+// console.log(pics);
 if (names.length != pics.length) {
     console.log("出错啦！   名字长度与图片长度不一致");
     process.exit(1);

@@ -4,8 +4,15 @@ var fs=require('fs');
 var iconv=require('iconv-lite');
 var config=require('./config');
 var path=require('path');
+var process=require('process');
 
-var title = '的债权';
+if(process.argv.length!=3){
+    console.log('usage node '+__filename+ '账单/债权');
+    process.exit(-1);
+}
+var func=process.argv[2];//账单、债权
+
+var title = '的'+func;
 
 var transporter = mailer.createTransport({
     host: config.server,
@@ -88,7 +95,7 @@ function sendMail() {
 
 
 function getBody() {
-    var body = fs.readFileSync('templates/债权.html','utf8');
+    var body = fs.readFileSync('templates/'+func+'.html','utf8');
     var d = new Date();
     var date = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
     body = body.replace(/\[DATE\]/, date);
@@ -124,7 +131,7 @@ function getAttachFiles(names) {
         if (index==-1){
             index=fileName.lastIndexOf('.');
         }
-        index -=3;//'的债权'
+        index -=3;//'的账单'
         var username=fileName.substr(0,index);
         if(-1==names.indexOf(username)){
             console.warn(dirAttach+"/"+fileName+" 不属于任何收件人");
@@ -144,7 +151,6 @@ function printReceivers() {
     console.log("\n收件人:");
     console.log(receivers);
 }
-
 function printAttaches() {
     console.log("\n收件人对应的附件：");
     for (f in attachFiles) {
